@@ -1,0 +1,8 @@
+
+server side
+step1 :  npm init --y
+step 2: npm install --save socket.io express 
+
+
+client side
+step 3 : npm install --save socket.io-client
