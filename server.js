@@ -33,7 +33,8 @@ io.on("connection", (socket) => {
         delete users[user];
       }
     }
-    io.emit("new_user",users);
+    io.emit("all_user",users); 
+    
 
   })
 
@@ -41,7 +42,11 @@ io.on("connection", (socket) => {
     console.log(username + " is online");
     users[username] = socket.id;
 
-    io.emit("new_user",users);
+    io.emit("all_user",users);
+  })
+
+  socket.on("send_message",(data) => {
+    console.log(data)
   })
 });
 
