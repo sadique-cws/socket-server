@@ -46,7 +46,10 @@ io.on("connection", (socket) => {
   })
 
   socket.on("send_message",(data) => {
-    console.log(data)
+    
+    const socketId = users[data.reciever];
+    io.to(socketId).emit("new_message",data)
+
   })
 });
 
